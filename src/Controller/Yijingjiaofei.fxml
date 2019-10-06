@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="YijingjiaofeiPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="135.0" prefWidth="463.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.YijingjiaofeiController">
+   <children>
+      <Label fx:id="YijingjiaofeiLabel" layoutX="115.0" prefHeight="135.0" prefWidth="347.0" text="已经缴费" textFill="#0af03d">
+         <font>
+            <Font size="63.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

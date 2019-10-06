@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane fx:id="DoctorWindow" prefHeight="998.0" prefWidth="1916.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DoctorWindowController">
+   <children>
+      <Pane fx:id="TopPane1" prefHeight="156.0" prefWidth="1915.0" style="-fx-background-color: #7744FF;">
+         <children>
+            <Label fx:id="TopLabelText1" layoutX="696.0" layoutY="3.0" prefHeight="151.0" prefWidth="535.0" style="-fx-background-color: #9900FF;" text="NeuHIS System" textAlignment="CENTER">
+               <font>
+                  <Font name="ZCOOL Addict Italic 01" size="73.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.48058252427184467" endY="0.2621359223300971" startX="0.47572815533980584" startY="0.7718446601941747">
+                     <stops>
+                        <Stop color="#0b6b17" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+         </children>
+      </Pane>
+      <SplitPane fx:id="SplitPane1" dividerPositions="0.14061683220073184" layoutY="156.0" prefHeight="842.0" prefWidth="1915.0">
+        <items>
+          <AnchorPane fx:id="leftPane1" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Accordion fx:id="DoctorZone" prefHeight="840.0" prefWidth="265.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <panes>
+                      <TitledPane fx:id="DoctorPane" animated="false" text="医生开药" textFill="#1f221f">
+                        <content>
+                          <AnchorPane fx:id="KaiyaoPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="KaiyaoButton" mnemonicParsing="false" onMouseClicked="#OnKaiyaoMouseCliked" prefHeight="151.0" prefWidth="265.0" text="开药" textFill="#06c60a">
+                                       <font>
+                                          <Font size="54.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                           <font>
+                              <Font size="37.0" />
+                           </font>
+                      </TitledPane>
+                    </panes>
+                  </Accordion>
+               </children>
+            </AnchorPane>
+          <AnchorPane fx:id="MainPane1" minHeight="0.0" minWidth="0.0" prefHeight="584.0" prefWidth="664.0">
+               <children>
+                  <TabPane fx:id="KaiyaoRightPane" prefHeight="840.0" prefWidth="1640.0" tabClosingPolicy="UNAVAILABLE" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                      <Tab fx:id="KaiyaoTab" text="开药">
+                        <content>
+                          <AnchorPane fx:id="KaiyaoMainPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="PatientInfoTable" layoutX="64.0" layoutY="59.0" prefHeight="226.0" prefWidth="1227.0">
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                       <columns>
+                                          <TableColumn fx:id="BLHColumn" prefWidth="75.0" text="病历号" />
+                                          <TableColumn fx:id="PatientNameColumn" prefWidth="75.0" text="患者姓名" />
+                                          <TableColumn fx:id="OldColumn" prefWidth="75.0" text="年龄" />
+                                          <TableColumn fx:id="SexColumn" prefWidth="75.0" text="性别" />
+                                       </columns></TableView>
+                                    <TableView fx:id="YaoTable" layoutX="64.0" layoutY="340.0" prefHeight="247.0" prefWidth="1228.0">
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                       <columns>
+                                          <TableColumn fx:id="DragNameColumn" prefWidth="75.0" text="药品名称" />
+                                          <TableColumn fx:id="DragPriceColumn" prefWidth="75.0" text="药品价格" />
+                                       </columns></TableView>
+                                    <Button fx:id="QuerenKaiYaoButton" layoutX="1211.0" layoutY="628.0" mnemonicParsing="false" onMouseClicked="#OnQuerenKaiyaoMouseClicked" text="确认开药" />
+                                    <Label fx:id="PatienInfoLabel" layoutX="64.0" layoutY="30.0" text="患者信息" />
+                                    <Label fx:id="YaoPintableLabel" layoutX="64.0" layoutY="305.0" text="药品列表" />
+                                    <Button fx:id="ShowInfoButton" layoutX="1091.0" layoutY="628.0" mnemonicParsing="false" onMouseClicked="#OnShowInfoMouseClicked" prefHeight="30.0" prefWidth="81.0" text="信息获取" />
+                                    <ComboBox fx:id="DocIDCombox" layoutX="922.0" layoutY="628.0" prefWidth="150.0" promptText="选择你的ID" />
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

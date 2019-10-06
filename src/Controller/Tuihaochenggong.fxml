@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="TuihaochenggongPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="135.0" prefWidth="463.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TuihaochenggongController">
+   <children>
+      <Label fx:id="TuihaochenggongLabel" layoutX="115.0" prefHeight="135.0" prefWidth="347.0" text="退号成功" textFill="#05ed19">
+         <font>
+            <Font size="63.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

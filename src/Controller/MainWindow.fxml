@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="MainWindow" prefHeight="998.0" prefWidth="1916.0" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainWindowController">
+   <children>
+      <Pane fx:id="TopPane" prefHeight="156.0" prefWidth="1915.0" style="-fx-background-color: #7744FF;">
+         <children>
+            <Label fx:id="TopLabelText" layoutX="696.0" layoutY="3.0" prefHeight="151.0" prefWidth="535.0" style="-fx-background-color: #9900FF;" text="NeuHIS System" textAlignment="CENTER">
+               <font>
+                  <Font name="ZCOOL Addict Italic 01" size="73.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.48058252427184467" endY="0.2621359223300971" startX="0.47572815533980584" startY="0.7718446601941747">
+                     <stops>
+                        <Stop color="#0b6b17" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+         </children>
+      </Pane>
+      <SplitPane fx:id="SplitPane" dividerPositions="0.14061683220073184" layoutY="156.0" prefHeight="842.0" prefWidth="1915.0">
+        <items>
+          <AnchorPane fx:id="leftPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Accordion fx:id="TitleZone" prefHeight="840.0" prefWidth="265.0">
+                    <panes>
+                      <TitledPane fx:id="RegisteredPaymentTitle" animated="false" text="挂号缴费">
+                        <content>
+                          <AnchorPane fx:id="GuahaoPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="OnRegisterButton" layoutX="3.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#OnRegisterMouseClicked" prefHeight="83.0" prefWidth="257.0" text="现场挂号">
+                                       <font>
+                                          <Font size="40.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="WithdrawButton" layoutX="3.0" layoutY="175.0" mnemonicParsing="false" onMouseClicked="#OutMouseClicked" prefHeight="83.0" prefWidth="257.0" text="退号">
+                                       <font>
+                                          <Font size="40.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="ChargeButton" layoutX="2.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#ChargeMouseClicked" prefHeight="83.0" prefWidth="257.0" text="收费">
+                                       <font>
+                                          <Font size="40.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="RefondButton" disable="true" layoutX="2.0" layoutY="540.0" mnemonicParsing="false" onMouseClicked="#BackMouseClicked" prefHeight="83.0" prefWidth="257.0" text="退费" visible="false">
+                                       <font>
+                                          <Font size="40.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                           <font>
+                              <Font name="zcoolqingkehuangyouti-Regular" size="34.0" />
+                           </font>
+                      </TitledPane>
+                    </panes>
+                  </Accordion>
+               </children>
+            </AnchorPane>
+          <AnchorPane fx:id="MainPane" minHeight="0.0" minWidth="0.0" prefHeight="584.0" prefWidth="664.0">
+               <children>
+                  <TabPane fx:id="RegisteredPaymentPane" prefHeight="840.0" prefWidth="1640.0" tabClosingPolicy="UNAVAILABLE" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                      <Tab fx:id="RegisterTable" text="现场挂号">
+                        <content>
+                          <AnchorPane fx:id="OnRegisterAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TextField fx:id="InvoiceText" layoutX="211.0" layoutY="45.0" promptText="发票号" />
+                                    <Label fx:id="FaPiaoLabel" layoutX="106.0" layoutY="50.0" text="发票号" textFill="#141414" />
+                                    <Button fx:id="RegisterButton" layoutX="461.0" layoutY="45.0" mnemonicParsing="false" onMouseClicked="#RegisterMouseClicked" text="挂号" />
+                                    <Button fx:id="ClearButton" layoutX="570.0" layoutY="45.0" mnemonicParsing="false" onMouseClicked="#ClearMouseClicked" text="清空" />
+                                    <Label fx:id="RedStar1" layoutX="92.0" layoutY="50.0" text="*" textFill="#f20707" />
+                                    <Label fx:id="GuaHaoInfoLabel" layoutX="99.0" layoutY="124.0" text="挂号信息" />
+                                    <Label fx:id="BingLiHaoLabel" layoutX="109.0" layoutY="172.0" text="病历号" />
+                                    <TextField fx:id="BingLiNumberText" layoutX="211.0" layoutY="167.0" prefHeight="30.0" prefWidth="234.0" promptText="病历号" />
+                                    <TextField fx:id="NameText" layoutX="618.0" layoutY="167.0" prefHeight="30.0" prefWidth="235.0" promptText="姓名" />
+                                    <Label fx:id="NameLabel" layoutX="540.0" layoutY="172.0" text="姓名" />
+                                    <Label fx:id="SexLabel" layoutX="931.0" layoutY="172.0" text="性别" />
+                                    <Label fx:id="AgeLabel" layoutX="1209.0" layoutY="172.0" text="年龄" />
+                                    <TextField fx:id="OldText" layoutX="1278.0" layoutY="167.0" prefHeight="30.0" prefWidth="148.0" promptText="年龄（岁）" />
+                                    <Label fx:id="BirthLabel" layoutX="109.0" layoutY="232.0" text="出生日期" />
+                                    <Label fx:id="IDLabel" layoutX="525.0" layoutY="232.0" text="身份证号" />
+                                    <TextField fx:id="IDNumberText" layoutX="619.0" layoutY="227.0" prefHeight="30.0" prefWidth="234.0" promptText="身份证号" />
+                                    <Label fx:id="AddLabel" layoutX="916.0" layoutY="232.0" text="家庭住址" />
+                                    <TextField fx:id="AddressText" layoutX="1002.0" layoutY="227.0" prefHeight="30.0" prefWidth="425.0" promptText="家庭住址" />
+                                    <Label fx:id="JieSuanLabel" layoutX="109.0" layoutY="293.0" text="结算类别" />
+                                    <ComboBox fx:id="JiesuanButton" layoutX="210.0" layoutY="288.0" prefHeight="30.0" prefWidth="233.0" />
+                                    <Label fx:id="KanDoctorLabel" layoutX="525.0" layoutY="293.0" text="看诊日期" />
+                                    <DatePicker fx:id="LookDoctorPicker" layoutX="620.0" layoutY="288.0" promptText="看诊日期" />
+                                    <DatePicker fx:id="BirthdayPicker" layoutX="210.0" layoutY="227.0" promptText="出生日期" />
+                                    <Label fx:id="BingLibenLabel" layoutX="117.0" layoutY="410.0" text="病历本" />
+                                    <Label fx:id="ShouldMoneyLabel" layoutX="525.0" layoutY="410.0" text="应收金额" />
+                                    <Label fx:id="WayofChargeLabel" layoutX="916.0" layoutY="410.0" text="收费方式" />
+                                    <TextField fx:id="MoneyText" layoutX="618.0" layoutY="405.0" prefHeight="30.0" prefWidth="236.0" promptText="应收金额" />
+                                    <ComboBox fx:id="WayofPayButton" layoutX="1002.0" layoutY="405.0" prefWidth="150.0" />
+                                    <Label fx:id="RedStar2" layoutX="92.0" layoutY="172.0" text="*" textFill="#f50101" />
+                                    <Label fx:id="NoonLabel" layoutX="927.0" layoutY="293.0" text="午别" />
+                                    <ComboBox fx:id="AfterNoonButton" layoutX="1002.0" layoutY="288.0" prefWidth="150.0" />
+                                    <ComboBox fx:id="RoomButton" layoutX="1278.0" layoutY="288.0" prefWidth="150.0" />
+                                    <Label fx:id="RoomLabel" layoutX="1194.0" layoutY="293.0" text="挂号科室" />
+                                    <Label fx:id="RedStar3" layoutX="92.0" layoutY="293.0" text="*" textFill="#f50101" />
+                                    <Label fx:id="RedStar4" layoutX="523.0" layoutY="172.0" text="*" textFill="#f50101" />
+                                    <Label fx:id="HaoBieLabel" layoutX="120.0" layoutY="355.0" text="号别" />
+                                    <Label fx:id="DoctorLabe" layoutX="525.0" layoutY="355.0" text="看诊医生" />
+                                    <ComboBox fx:id="HaoBieButton" layoutX="210.0" layoutY="350.0" prefHeight="30.0" prefWidth="232.0" />
+                                    <ComboBox fx:id="SexButton" layoutX="1002.0" layoutY="167.0" prefWidth="150.0" />
+                                    <ComboBox fx:id="DoctorButton" layoutX="620.0" layoutY="350.0" prefHeight="30.0" prefWidth="233.0" />
+                                    <Label fx:id="RedStar5" layoutX="905.0" layoutY="172.0" text="*" textFill="#f50101" />
+                                    <Label fx:id="RedStar6" layoutX="509.0" layoutY="293.0" text="*" textFill="#f50101" />
+                                    <Label fx:id="RedStar7" layoutX="508.0" layoutY="355.0" text="*" textFill="#f50101" />
+                                    <Label fx:id="RedStar8" layoutX="508.0" layoutY="410.0" text="*" textFill="#f50101" />
+                                    <Label fx:id="RedStar9" layoutX="92.0" layoutY="355.0" text="*" textFill="#f50101" />
+                                    <Label fx:id="RedStar10" layoutX="905.0" layoutY="293.0" text="*" textFill="#f50101" />
+                                    <Label fx:id="RedStar11" layoutX="905.0" layoutY="410.0" text="*" textFill="#f50101" />
+                                    <Label fx:id="RedStar12" layoutX="1180.0" layoutY="172.0" text="*" textFill="#f50101" />
+                                    <Label fx:id="RedStar13" layoutX="1180.0" layoutY="293.0" text="*" textFill="#f50101" />
+                                    <CheckBox fx:id="BingLiBen" layoutX="211.0" layoutY="410.0" mnemonicParsing="false" />
+                                    <Label fx:id="ErrorLabel" layoutX="710.0" layoutY="50.0" prefHeight="20.0" prefWidth="221.0" textFill="#fc0505" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+                  <TabPane fx:id="GetMoneyTabPane" prefHeight="840.0" prefWidth="1640.0" tabClosingPolicy="UNAVAILABLE" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                      <Tab fx:id="ChargeTab" text="收费">
+                        <content>
+                          <AnchorPane fx:id="ChargeAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="InfoSearchLabel" layoutX="64.0" layoutY="61.0" text="患者信息查询">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="InfoBLHLabel" layoutX="228.0" layoutY="65.0" text="病历号：" />
+                                    <Label fx:id="InfoIDLabel" layoutX="589.0" layoutY="204.0" text="身份证号：" />
+                                    <Label fx:id="InfoAddL" layoutX="1063.0" layoutY="204.0" text="家庭地址：" />
+                                    <Label fx:id="XiaofeiL" layoutX="64.0" layoutY="253.0" text="患者消费信息">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="InfoNumberText" layoutX="324.0" layoutY="60.0" />
+                                    <TextField fx:id="InfoIDText" layoutX="664.0" layoutY="199.0" prefHeight="30.0" prefWidth="340.0" />
+                                    <TextField fx:id="InfoAddressText" layoutX="1138.0" layoutY="199.0" prefHeight="30.0" prefWidth="405.0" />
+                                    <Button fx:id="SearchButton" layoutX="589.0" layoutY="60.0" mnemonicParsing="false" onMouseClicked="#OnSearchMouseCliked" text="搜索" />
+                                    <Label fx:id="CheckL" layoutX="64.0" layoutY="135.0" text="患者信息确认">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="InfoNameL" layoutX="228.0" layoutY="204.0" text="姓名：" />
+                                    <TextField fx:id="InfoNameText" layoutX="324.0" layoutY="199.0" />
+                                    <Label fx:id="RedStar14" layoutX="215.0" layoutY="65.0" text="*" textFill="#fc0606" />
+                                    <TableView fx:id="InfoTable" layoutX="226.0" layoutY="338.0" prefHeight="297.0" prefWidth="1315.0">
+                                      <columns>
+                                        <TableColumn fx:id="MoneyNameColumn" prefWidth="75.0" text="缴费项目" />
+                                        <TableColumn fx:id="MoneyPriceColumn" prefWidth="75.0" text="缴费金额" />
+                                      </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                    <Button fx:id="JiaofeiButton" layoutX="1369.0" layoutY="664.0" mnemonicParsing="false" onMouseClicked="#OnJiaofeiMouseClicked" prefHeight="30.0" prefWidth="173.0" text="确认缴费" />
+                                    <Label fx:id="GuahaofeiLabel" layoutX="228.0" layoutY="288.0" text="挂号费：" />
+                                    <TextField fx:id="GuahaofeiText" layoutX="324.0" layoutY="283.0" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+                  <TabPane fx:id="OutTabPane" prefHeight="840.0" prefWidth="1640.0" tabClosingPolicy="UNAVAILABLE" visible="false">
+                     <tabs>
+                        <Tab fx:id="OutTab" text="退号">
+                           <content>
+                              <AnchorPane fx:id="OutAnchorPane" focusTraversable="true" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="OutSearchL" layoutX="64.0" layoutY="61.0" text="患者信息查询">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="OutBLHL" layoutX="228.0" layoutY="65.0" text="病历号：" />
+                                    <Label fx:id="OutIDL" layoutX="589.0" layoutY="204.0" text="身份证号：" />
+                                    <Label fx:id="OutAddL" layoutX="1063.0" layoutY="204.0" text="家庭地址：" />
+                                    <TextField fx:id="OutBingLiHaoText" layoutX="324.0" layoutY="60.0" />
+                                    <TextField fx:id="OutIDText" layoutX="664.0" layoutY="199.0" prefHeight="30.0" prefWidth="340.0" />
+                                    <TextField fx:id="OutAddressText" layoutX="1138.0" layoutY="199.0" prefHeight="30.0" prefWidth="405.0" />
+                                    <Button fx:id="OutSearchBuuton" layoutX="589.0" layoutY="60.0" mnemonicParsing="false" onMouseClicked="#OnTuihaoSearchMouseClicked" text="搜索" />
+                                    <Label fx:id="OutCheckL" layoutX="64.0" layoutY="135.0" text="患者信息确认">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="OytNameL" layoutX="228.0" layoutY="204.0" text="姓名：" />
+                                    <TextField fx:id="OutNameText" layoutX="324.0" layoutY="199.0" />
+                                    <Label fx:id="RedStar15" layoutX="215.0" layoutY="65.0" text="*" textFill="#fc0606" />
+                                    <Button fx:id="TuihaoButton" layoutX="664.0" layoutY="340.0" mnemonicParsing="false" onMouseClicked="#OnTuiHaoMouseClicked" prefHeight="98.0" prefWidth="338.0" text="确认退号" textFill="#0b9a21">
+                                       <font>
+                                          <Font name="Microsoft YaHei" size="47.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+                  <TabPane fx:id="BackTabPane" prefHeight="840.0" prefWidth="1640.0" tabClosingPolicy="UNAVAILABLE" visible="false">
+                     <tabs>
+                        <Tab fx:id="BackTab" text="未开发功能">
+                           <content>
+                              <AnchorPane fx:id="BackAnchorPane" focusTraversable="true" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="BackSearchL" layoutX="64.0" layoutY="61.0" text="患者信息查询">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="BackBLHL" layoutX="228.0" layoutY="65.0" text="病历号：" />
+                                    <Label fx:id="BackIDL" layoutX="589.0" layoutY="204.0" text="身份证号：" />
+                                    <Label fx:id="BackAddL" layoutX="1063.0" layoutY="204.0" text="家庭地址：" />
+                                    <Label fx:id="BackGuahaoInfoL" layoutX="64.0" layoutY="253.0" text="患者缴费信息">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="BackBingLiHaoText" layoutX="324.0" layoutY="60.0" />
+                                    <TextField fx:id="OutIDText1" layoutX="664.0" layoutY="199.0" prefHeight="30.0" prefWidth="340.0" />
+                                    <TextField fx:id="BackAddressText" layoutX="1138.0" layoutY="199.0" prefHeight="30.0" prefWidth="405.0" />
+                                    <Button fx:id="BackSearchBuuton" layoutX="589.0" layoutY="60.0" mnemonicParsing="false" text="搜索" />
+                                    <Label fx:id="BackCheckL" layoutX="64.0" layoutY="135.0" text="患者信息确认">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="BacktNameL" layoutX="228.0" layoutY="204.0" text="姓名：" />
+                                    <TextField fx:id="BackNameText" layoutX="324.0" layoutY="199.0" />
+                                    <Label fx:id="RedStar16" layoutX="215.0" layoutY="65.0" text="*" textFill="#fc0606" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

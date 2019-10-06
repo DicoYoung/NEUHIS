@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="LoginGUI" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="545.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginGUIController">
+   <children>
+    <Button id="LoginButton" fx:id="LoginButton" contentDisplay="BOTTOM" layoutX="122.0" layoutY="337.0" mnemonicParsing="false" onMouseClicked="#mouseClicked" onMousePressed="#mousePressed" onMouseReleased="#mouseReleased" prefHeight="45.0" prefWidth="300.0" style="-fx-background-color: #8A2BE2;" styleClass="LoginButtonStyle" text="LOGIN" textAlignment="CENTER" textFill="#f8f8f8">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font>
+      </Button>
+      <PasswordField fx:id="PasswordText" layoutX="122.0" layoutY="266.0" prefHeight="30.0" prefWidth="299.0" promptText="PASSWORD">
+         <font>
+            <Font name="Impact" size="15.0" />
+         </font>
+      </PasswordField>
+      <TextField fx:id="IDText" layoutX="122.0" layoutY="214.0" prefHeight="30.0" prefWidth="299.0" promptText="USERID">
+         <font>
+            <Font name="Impact" size="15.0" />
+         </font>
+      </TextField>
+      <Label fx:id="StateLabel" layoutX="122.0" layoutY="302.0" prefHeight="28.0" prefWidth="299.0" text=" " textFill="#f50505">
+         <font>
+            <Font name="Impact" size="22.0" />
+         </font>
+      </Label>
+      <Pane fx:id="TopPicture" layoutX="-4.0" layoutY="-6.0" prefHeight="206.0" prefWidth="551.0" style="-fx-border-color: green; -fx-background-color: #1E90FF;">
+         <children>
+            <Label fx:id="TopText" layoutX="145.0" layoutY="45.0" prefHeight="118.0" prefWidth="289.0" text="NeuHIS" textAlignment="CENTER">
+               <font>
+                  <Font name="Impact" size="96.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.07281553398058249" endY="0.38834951456310685" startX="0.32524271844660196" startY="0.7378640776699029">
+                     <stops>
+                        <Stop color="#a607eb" />
+                        <Stop color="#eb0505" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</Pane>
